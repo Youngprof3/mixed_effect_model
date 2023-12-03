@@ -121,6 +121,19 @@ model_3 <- lmer(LogReaction ~ Days + (1|Subject), data_2)
 summary(model_3)
 View(data_2)
 
+## MODEL INTERPRETATION
+#Model 1:
+#The intercept indicates the average reaction time without sleep deprivation, with a value of 251.4 ms.
+# With each additional day of sleep deprivation, the reaction time increases by 10.3 ms.
+#The standard deviation of reaction time for a subject is 37.12 ms, reflecting variability between subjects' reaction times.
+
+  
+#Model 3 (log-transformed reaction time for observation from day 3):
+
+#The exponential of the intercept shows the reaction time without sleep deprivation, with a value of 252.16 ms.
+#The t value of 8.41 indicates the significance of day on reaction time, and it is highly significant.
+#There is significant variability between subjects.
+
 ## RESIDUAL ANALYSIS FOR MODEL 1
 
 res <- residuals(model_1)
