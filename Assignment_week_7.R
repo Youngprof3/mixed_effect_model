@@ -114,12 +114,13 @@ summary(model_1)
 Intercept <- exp(5.530065)
 Intercept
 
-model_2 <- lmer(LogReaction~ Days*(1|Subject), sleepstudy)
+model_2 <- lmer(LogReaction ~ Days + (1|Subject), sleepstudy)
 summary(model_2)
 
-model_3 <- lmer(LogReaction~ Days*(1|Subject), data_2)
+model_3 <- lmer(LogReaction ~ Days + (1|Subject), data_2)
 summary(model_3)
 View(data_2)
+
 ## RESIDUAL ANALYSIS FOR MODEL 1
 
 res <- residuals(model_1)
